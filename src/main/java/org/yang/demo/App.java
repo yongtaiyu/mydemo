@@ -1,4 +1,4 @@
-package org.yang.mydemo;
+package org.yang.demo;
 
 /**
  * Hello world!
