@@ -14,7 +14,7 @@ import com.zenith.demo.rocketmq.RocketMQListener;
  * 说明：亿邮邮件发送Demo
  * 
  */
-public class CommonsEmailTest {
+public class eyou {
 	private String host = "mail.gs.cq";
 	private int port = 25;
 	private String userName = "111@gs.cq";
@@ -181,7 +181,7 @@ public class CommonsEmailTest {
 	}
 
 	public static void main(String[] args) {
-		CommonsEmailTest ce = new CommonsEmailTest();
+		eyou ce = new eyou();
 		try {
 			ce.sendTextMail();
 		} catch (Exception e) {
