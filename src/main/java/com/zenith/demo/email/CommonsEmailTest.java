@@ -10,7 +10,10 @@ import org.apache.commons.mail.SimpleEmail;
 
 import com.zenith.demo.rocketmq.RocketMQConsumer;
 import com.zenith.demo.rocketmq.RocketMQListener;
-
+/*
+ * 说明：亿邮邮件发送Demo
+ * 
+ */
 public class CommonsEmailTest {
 	private String host = "mail.gs.cq";
 	private int port = 25;
