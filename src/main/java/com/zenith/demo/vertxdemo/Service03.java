@@ -8,11 +8,11 @@ public class Service03 extends AbstractVerticle{
     public static final String URL03="VERTX_HELLO_SERVER03";
     
     public void start(){
-        vertx.eventBus().consumer(URL03,   //´¦Àí×ÜÏß·¢ËÍ¹ıÀ´µÄÏàÓ¦µÄÊÂ¼ş
-                msg -> {                   //msgÏûÏ¢·¢ËÍ¹ıÀ´µÄÏûÏ¢
-                    System.out.println(msg.body()); //´¦ÀíÇëÇóÏûÏ¢
-                    System.out.print("url03"); //Ïàµ±ÓÚÆäËüÂß¼­ 
-                    msg.reply("success03");  //¶ÔÊÂ¼ş½øĞĞ·µ»Ø½á¹û£¬Ïàµ±ÓÚÊÂ¼şÖĞµÄresult
+        vertx.eventBus().consumer(URL03,   //å¤„ç†æ€»çº¿å‘é€è¿‡æ¥çš„ç›¸åº”çš„äº‹ä»¶
+                msg -> {                   //msgæ¶ˆæ¯å‘é€è¿‡æ¥çš„æ¶ˆæ¯
+                    System.out.println(msg.body()); //å¤„ç†è¯·æ±‚æ¶ˆæ¯
+                    System.out.print("url03"); //ç›¸å½“äºå…¶å®ƒé€»è¾‘ 
+                    msg.reply("success03");  //å¯¹äº‹ä»¶è¿›è¡Œè¿”å›ç»“æœï¼Œç›¸å½“äºäº‹ä»¶ä¸­çš„result
                   }
                 );
     }

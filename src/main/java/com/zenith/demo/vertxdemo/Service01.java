@@ -8,16 +8,16 @@ public class Service01 extends AbstractVerticle{
     public void start(){
         vertx.eventBus().consumer(URL01, 
                 msg -> {
-                    System.out.println(msg.body()); //处理请求消息
-                    System.out.print("url01"); //相当于其它逻辑 
-                    msg.reply("success01");  //返回给result
+                    System.out.println(msg.body()); //澶勭悊璇锋眰娑堟伅
+                    System.out.print("url01"); //鐩稿綋浜庡叾瀹冮�昏緫 
+                    msg.reply("success01");  //杩斿洖缁檙esult
                   }
                 );
         vertx.eventBus().consumer(URL02, 
                 msg -> {
                     System.out.println(msg.body());
-                    System.out.print("url02"); //相当于其它逻辑 
-                    msg.reply("success02");  //返回给result
+                    System.out.print("url02"); //鐩稿綋浜庡叾瀹冮�昏緫 
+                    msg.reply("success02");  //杩斿洖缁檙esult
                 }
                 );
     }

@@ -10,22 +10,14 @@ import org.apache.commons.mail.SimpleEmail;
 
 import com.zenith.demo.rocketmq.RocketMQConsumer;
 import com.zenith.demo.rocketmq.RocketMQListener;
-/*
- * 说明：亿邮邮件发送Demo
- * 
- */
+
 public class mail163 {
 	private String host = "smtp.163.com";
 	private int port = 25;
 	private String userName = "shengjiebaima@163.com";
-	private String password = "";
+	private String password = "y131531j";
 	private String to = "376040925@qq.com";
 
-	/**
-	 * 发送文本邮件
-	 * 
-	 * @throws Exception
-	 */
 	public void sendTextMail() throws Exception {
 		SimpleEmail mail = new SimpleEmail();
 		// 设置邮箱服务器信息
@@ -181,10 +173,9 @@ public class mail163 {
 	}
 
 	public static void main(String[] args) {
-		mail163 ce = new mail163();
+		eyou ce = new eyou();
 		try {
 			ce.sendTextMail();
-			ce.sendHtmlMail();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

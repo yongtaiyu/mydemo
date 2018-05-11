@@ -10,36 +10,36 @@ import io.vertx.ext.web.Router;
 
 public class Server extends AbstractVerticle {
 
-	public void start() { // ·şÎñÒ»·¢²¼¾Í»áÖ´ĞĞstart
+	public void start() { // æœåŠ¡ä¸€å‘å¸ƒå°±ä¼šæ‰§è¡Œstart
 		Router router = Router.router(vertx);
 		System.out.println("enter");
 
 		vertx.setPeriodic(1000, id -> {
-			System.out.println("timer"+id); // Ã¿1000ºÁÃë£¬´òÓ¡Ò»´Î£¬Ò²¾ÍÊÇËµ1000ºÁÃëµÄÂß¼­Ö´ĞĞÍê³É£¬ºóÃæµÄ¾Í»á±»´¥·¢
+			System.out.println("timer"+id); // æ¯1000æ¯«ç§’ï¼Œæ‰“å°ä¸€æ¬¡ï¼Œä¹Ÿå°±æ˜¯è¯´1000æ¯«ç§’çš„é€»è¾‘æ‰§è¡Œå®Œæˆï¼Œåé¢çš„å°±ä¼šè¢«è§¦å‘
 		});
 		HttpServer server = vertx.createHttpServer();
 
 		Handler handler;
-		router.routeWithRegex("/sp1").handler( // ¶ÔurlÇëÇó½øĞĞÀ¹½Ø²¢´¦Àí
-				// ctxÓ¦ÓÃÉÏÏÂÎÄ
-				ctx -> vertx.eventBus().<String> send( // vertx.eventBus()ÊÂ¼ş×ÜÏß£¬¿ÉÒÔÓë²ÎÊıÀïÃæµÄµØÖ·½øĞĞÍ¨ĞÅ£¬ÄÜ¹»ÔÚËùÓĞvertxÖ®¼ä½øĞĞÍ¨ĞÅ
+		router.routeWithRegex("/sp1").handler( // å¯¹urlè¯·æ±‚è¿›è¡Œæ‹¦æˆªå¹¶å¤„ç†
+				// ctxåº”ç”¨ä¸Šä¸‹æ–‡
+				ctx -> vertx.eventBus().<String> send( // vertx.eventBus()äº‹ä»¶æ€»çº¿ï¼Œå¯ä»¥ä¸å‚æ•°é‡Œé¢çš„åœ°å€è¿›è¡Œé€šä¿¡ï¼Œèƒ½å¤Ÿåœ¨æ‰€æœ‰vertxä¹‹é—´è¿›è¡Œé€šä¿¡
 														// <String>
-														// Ïò·şÎñ·¢ËÍµÄMessageÀïÃæ°üº¬µÄÀàĞÍ¡£¿ÉÒÔÊÇ¶ÔÏóµÈ
-						Service01.URL01, // ÇëÇó×ª·¢µÄµØÖ·£¬½»ÓÉÏàÓ¦µÄ·şÎñ¶ÔÊÂ¼ş½øĞĞ´¦Àí
-						"Hello Vertx1", // MessageÖĞµÄÄÚÈİ¡£ÓĞÉÏÃæµÄString¾ö¶¨<String>
-						result -> { // ·şÎñ½«ÊÂ¼ş´¦ÀíÍê³É£¬·µ»ØµÄ½á¹û
-							if (result.succeeded()) // ´¦Àí³É¹¦ºóÖ´ĞĞµÄÂß¼­
+														// å‘æœåŠ¡å‘é€çš„Messageé‡Œé¢åŒ…å«çš„ç±»å‹ã€‚å¯ä»¥æ˜¯å¯¹è±¡ç­‰
+						Service01.URL01, // è¯·æ±‚è½¬å‘çš„åœ°å€ï¼Œäº¤ç”±ç›¸åº”çš„æœåŠ¡å¯¹äº‹ä»¶è¿›è¡Œå¤„ç†
+						"Hello Vertx1", // Messageä¸­çš„å†…å®¹ã€‚æœ‰ä¸Šé¢çš„Stringå†³å®š<String>
+						result -> { // æœåŠ¡å°†äº‹ä»¶å¤„ç†å®Œæˆï¼Œè¿”å›çš„ç»“æœ
+							if (result.succeeded()) // å¤„ç†æˆåŠŸåæ‰§è¡Œçš„é€»è¾‘
 								System.out.println(result.result().body());
-							// ctx.reroute("");¿ÉÒÔ½øĞĞ¶ş¼¶Â·ÓÉ
+							// ctx.reroute("");å¯ä»¥è¿›è¡ŒäºŒçº§è·¯ç”±
 							System.out.println("testi1");
-							ctx.response() // ÏìÓ¦£¬ºÍÃæ¿ÉÒÔ¸úÏìÓ¦ÄÚÈİ£¬Èçsetstatus()µÈ
+							ctx.response() // å“åº”ï¼Œå’Œé¢å¯ä»¥è·Ÿå“åº”å†…å®¹ï¼Œå¦‚setstatus()ç­‰
 									.end();
 						}));
 		System.out.println("test1");
 
 		router.routeWithRegex("/sp2")
 				.handler(ctx -> vertx.eventBus().<String> send(Service01.URL02, "Hello Vertx2", result -> {
-					if (result.succeeded()) // Èç¹û³É¹¦£¬ºóÌ¨½«»áÍ¨ÖªÀ´Ö´ĞĞÕâ¸ö¡£
+					if (result.succeeded()) // å¦‚æœæˆåŠŸï¼Œåå°å°†ä¼šé€šçŸ¥æ¥æ‰§è¡Œè¿™ä¸ªã€‚
 						System.out.println(result.result().body());
 					System.out.println("testi2");
 					ctx.response().end();
@@ -48,7 +48,7 @@ public class Server extends AbstractVerticle {
 
 		router.routeWithRegex("/sp3")
 				.handler(ctx -> vertx.eventBus().<String> send(Service03.URL03, "Hello Vertx3", result -> {
-					if (result.succeeded()) // Èç¹û³É¹¦£¬ºóÌ¨½«»áÍ¨ÖªÀ´Ö´ĞĞÕâ¸ö¡£
+					if (result.succeeded()) // å¦‚æœæˆåŠŸï¼Œåå°å°†ä¼šé€šçŸ¥æ¥æ‰§è¡Œè¿™ä¸ªã€‚
 						System.out.println(result.result().body());
 					System.out.println("testi3");
 					ctx.response().end();
