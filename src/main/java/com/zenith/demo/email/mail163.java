@@ -15,160 +15,160 @@ public class mail163 {
 	private String host = "smtp.163.com";
 	private int port = 25;
 	private String userName = "shengjiebaima@163.com";
-	private String password = "y131531j";
+	private String password = "";
 	private String to = "376040925@qq.com";
 
 	public void sendTextMail() throws Exception {
 		SimpleEmail mail = new SimpleEmail();
-		// ÉèÖÃÓÊÏä·şÎñÆ÷ĞÅÏ¢
+		// è®¾ç½®é‚®ç®±æœåŠ¡å™¨ä¿¡æ¯
 		// mail.setSmtpPort(port);
 		mail.setHostName(host);
-		// ÉèÖÃÃÜÂëÑéÖ¤Æ÷
+		// è®¾ç½®å¯†ç éªŒè¯å™¨
 		mail.setAuthentication(userName, password);
 
-		// ÉèÖÃÓÊ¼ş·¢ËÍÕß
+		// è®¾ç½®é‚®ä»¶å‘é€è€…
 		mail.setFrom(userName);
-		// ÉèÖÃÓÊ¼ş½ÓÊÕÕß
+		// è®¾ç½®é‚®ä»¶æ¥æ”¶è€…
 		mail.addTo(to);
-		// ÉèÖÃÓÊ¼ş±àÂë
+		// è®¾ç½®é‚®ä»¶ç¼–ç 
 		mail.setCharset("UTF-8");
-		// ÉèÖÃÓÊ¼şÖ÷Ìâ
+		// è®¾ç½®é‚®ä»¶ä¸»é¢˜
 		mail.setSubject("Test Email");
-		// ÉèÖÃÓÊ¼şÄÚÈİ
+		// è®¾ç½®é‚®ä»¶å†…å®¹
 		mail.setMsg("this is a test Text mail");
-		// ÉèÖÃÓÊ¼ş·¢ËÍÊ±¼ä
+		// è®¾ç½®é‚®ä»¶å‘é€æ—¶é—´
 		mail.setSentDate(new Date());
-		// ·¢ËÍÓÊ¼ş
+		// å‘é€é‚®ä»¶
 		mail.send();
 	}
 
 	/**
-	 * ·¢ËÍHtmlÓÊ¼ş
+	 * å‘é€Htmlé‚®ä»¶
 	 * 
 	 * @throws Exception
 	 */
 	public void sendHtmlMail() throws Exception {
 		HtmlEmail mail = new HtmlEmail();
-		// ÉèÖÃÓÊÏä·şÎñÆ÷ĞÅÏ¢
+		// è®¾ç½®é‚®ç®±æœåŠ¡å™¨ä¿¡æ¯
 		mail.setSmtpPort(port);
 		mail.setHostName(host);
-		// ÉèÖÃÃÜÂëÑéÖ¤Æ÷
+		// è®¾ç½®å¯†ç éªŒè¯å™¨
 		mail.setAuthentication(userName, password);
-		// ÉèÖÃÓÊ¼ş·¢ËÍÕß
+		// è®¾ç½®é‚®ä»¶å‘é€è€…
 		mail.setFrom(userName);
-		// ÉèÖÃÓÊ¼ş½ÓÊÕÕß
+		// è®¾ç½®é‚®ä»¶æ¥æ”¶è€…
 		mail.addTo(to);
-		// ÉèÖÃÓÊ¼ş±àÂë
+		// è®¾ç½®é‚®ä»¶ç¼–ç 
 		mail.setCharset("UTF-8");
-		// ÉèÖÃÓÊ¼şÖ÷Ìâ
+		// è®¾ç½®é‚®ä»¶ä¸»é¢˜
 		mail.setSubject("Test Email");
-		// ÉèÖÃÓÊ¼şÄÚÈİ
+		// è®¾ç½®é‚®ä»¶å†…å®¹
 		mail.setHtmlMsg(
 				"<html><body><img src='http://avatar.csdn.net/A/C/A/1_jianggujin.jpg'/><div>this is a HTML email.</div></body></html>");
-		// ÉèÖÃÓÊ¼ş·¢ËÍÊ±¼ä
+		// è®¾ç½®é‚®ä»¶å‘é€æ—¶é—´
 		mail.setSentDate(new Date());
-		// ·¢ËÍÓÊ¼ş
+		// å‘é€é‚®ä»¶
 		mail.send();
 	}
 
 	/**
-	 * ·¢ËÍÄÚÇ¶Í¼Æ¬ÓÊ¼ş
+	 * å‘é€å†…åµŒå›¾ç‰‡é‚®ä»¶
 	 * 
 	 * @throws Exception
 	 */
 	public void sendImageMail() throws Exception {
 		HtmlEmail mail = new HtmlEmail();
-		// ÉèÖÃÓÊÏä·şÎñÆ÷ĞÅÏ¢
+		// è®¾ç½®é‚®ç®±æœåŠ¡å™¨ä¿¡æ¯
 		mail.setSmtpPort(port);
 		mail.setHostName(host);
-		// ÉèÖÃÃÜÂëÑéÖ¤Æ÷
+		// è®¾ç½®å¯†ç éªŒè¯å™¨
 		mail.setAuthentication(userName, password);
-		// ÉèÖÃÓÊ¼ş·¢ËÍÕß
+		// è®¾ç½®é‚®ä»¶å‘é€è€…
 		mail.setFrom(userName);
-		// ÉèÖÃÓÊ¼ş½ÓÊÕÕß
+		// è®¾ç½®é‚®ä»¶æ¥æ”¶è€…
 		mail.addTo(to);
-		// ÉèÖÃÓÊ¼ş±àÂë
+		// è®¾ç½®é‚®ä»¶ç¼–ç 
 		mail.setCharset("UTF-8");
-		// ÉèÖÃÓÊ¼şÖ÷Ìâ
+		// è®¾ç½®é‚®ä»¶ä¸»é¢˜
 		mail.setSubject("Test Email");
 		mail.embed(new File("1_jianggujin.jpg"), "image");
-		// ÉèÖÃÓÊ¼şÄÚÈİ
+		// è®¾ç½®é‚®ä»¶å†…å®¹
 		String htmlText = "<html><body><img src='cid:image'/><div>this is a HTML email.</div></body></html>";
 		mail.setHtmlMsg(htmlText);
-		// ÉèÖÃÓÊ¼ş·¢ËÍÊ±¼ä
+		// è®¾ç½®é‚®ä»¶å‘é€æ—¶é—´
 		mail.setSentDate(new Date());
-		// ·¢ËÍÓÊ¼ş
+		// å‘é€é‚®ä»¶
 		mail.send();
 	}
 
 	/**
-	 * ·¢ËÍ¸½¼şÓÊ¼ş
+	 * å‘é€é™„ä»¶é‚®ä»¶
 	 * 
 	 * @throws Exception
 	 */
 	public void sendAttachmentMail() throws Exception {
 		MultiPartEmail mail = new MultiPartEmail();
-		// ÉèÖÃÓÊÏä·şÎñÆ÷ĞÅÏ¢
+		// è®¾ç½®é‚®ç®±æœåŠ¡å™¨ä¿¡æ¯
 		mail.setSmtpPort(port);
 		mail.setHostName(host);
-		// ÉèÖÃÃÜÂëÑéÖ¤Æ÷
+		// è®¾ç½®å¯†ç éªŒè¯å™¨
 		mail.setAuthentication(userName, password);
-		// ÉèÖÃÓÊ¼ş·¢ËÍÕß
+		// è®¾ç½®é‚®ä»¶å‘é€è€…
 		mail.setFrom(userName);
-		// ÉèÖÃÓÊ¼ş½ÓÊÕÕß
+		// è®¾ç½®é‚®ä»¶æ¥æ”¶è€…
 		mail.addTo(to);
-		// ÉèÖÃÓÊ¼ş±àÂë
+		// è®¾ç½®é‚®ä»¶ç¼–ç 
 		mail.setCharset("UTF-8");
-		// ÉèÖÃÓÊ¼şÖ÷Ìâ
+		// è®¾ç½®é‚®ä»¶ä¸»é¢˜
 		mail.setSubject("Test Email");
 
 		mail.setMsg("this is a Attachment email.this email has a attachment!");
-		// ´´½¨¸½¼ş
+		// åˆ›å»ºé™„ä»¶
 		EmailAttachment attachment = new EmailAttachment();
 		attachment.setPath("1_jianggujin.jpg");
 		attachment.setDisposition(EmailAttachment.ATTACHMENT);
 		attachment.setName("1_jianggujin.jpg");
 		mail.attach(attachment);
 
-		// ÉèÖÃÓÊ¼ş·¢ËÍÊ±¼ä
+		// è®¾ç½®é‚®ä»¶å‘é€æ—¶é—´
 		mail.setSentDate(new Date());
-		// ·¢ËÍÓÊ¼ş
+		// å‘é€é‚®ä»¶
 		mail.send();
 	}
 
 	/**
-	 * ·¢ËÍÄÚÇ¶Í¼Æ¬ºÍ¸½¼şÓÊ¼ş
+	 * å‘é€å†…åµŒå›¾ç‰‡å’Œé™„ä»¶é‚®ä»¶
 	 * 
 	 * @throws Exception
 	 */
 	public void sendImageAndAttachmentMail() throws Exception {
 		HtmlEmail mail = new HtmlEmail();
-		// ÉèÖÃÓÊÏä·şÎñÆ÷ĞÅÏ¢
+		// è®¾ç½®é‚®ç®±æœåŠ¡å™¨ä¿¡æ¯
 		mail.setSmtpPort(port);
 		mail.setHostName(host);
-		// ÉèÖÃÃÜÂëÑéÖ¤Æ÷
+		// è®¾ç½®å¯†ç éªŒè¯å™¨
 		mail.setAuthentication(userName, password);
-		// ÉèÖÃÓÊ¼ş·¢ËÍÕß
+		// è®¾ç½®é‚®ä»¶å‘é€è€…
 		mail.setFrom(userName);
-		// ÉèÖÃÓÊ¼ş½ÓÊÕÕß
+		// è®¾ç½®é‚®ä»¶æ¥æ”¶è€…
 		mail.addTo(to);
-		// ÉèÖÃÓÊ¼ş±àÂë
+		// è®¾ç½®é‚®ä»¶ç¼–ç 
 		mail.setCharset("UTF-8");
-		// ÉèÖÃÓÊ¼şÖ÷Ìâ
+		// è®¾ç½®é‚®ä»¶ä¸»é¢˜
 		mail.setSubject("Test Email");
 		mail.embed(new File("1_jianggujin.jpg"), "image");
-		// ÉèÖÃÓÊ¼şÄÚÈİ
+		// è®¾ç½®é‚®ä»¶å†…å®¹
 		String htmlText = "<html><body><img src='cid:image'/><div>this is a HTML email.</div></body></html>";
 		mail.setHtmlMsg(htmlText);
-		// ´´½¨¸½¼ş
+		// åˆ›å»ºé™„ä»¶
 		EmailAttachment attachment = new EmailAttachment();
 		attachment.setPath("1_jianggujin.jpg");
 		attachment.setDisposition(EmailAttachment.ATTACHMENT);
 		attachment.setName("1_jianggujin.jpg");
 		mail.attach(attachment);
-		// ÉèÖÃÓÊ¼ş·¢ËÍÊ±¼ä
+		// è®¾ç½®é‚®ä»¶å‘é€æ—¶é—´
 		mail.setSentDate(new Date());
-		// ·¢ËÍÓÊ¼ş
+		// å‘é€é‚®ä»¶
 		mail.send();
 	}
 
