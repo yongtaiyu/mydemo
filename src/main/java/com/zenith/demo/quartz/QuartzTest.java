@@ -14,30 +14,30 @@ public class QuartzTest {
 
     public static void main(String[] args) {
         try {
-            //´´½¨scheduler
+            //åˆ›å»ºscheduler
             Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
 
-            //¶¨ÒåÒ»¸öTrigger
-            Trigger trigger = newTrigger().withIdentity("trigger1", "group1") //¶¨Òåname/group
-                .startNow()//Ò»µ©¼ÓÈëscheduler£¬Á¢¼´ÉúĞ§
-                .withSchedule(simpleSchedule() //Ê¹ÓÃSimpleTrigger
-                .withIntervalInSeconds(1) //Ã¿¸ôÒ»ÃëÖ´ĞĞÒ»´Î
-                .repeatForever()) //Ò»Ö±Ö´ĞĞ£¬±¼ÌÚµ½ÀÏ²»Í£Ğª
+            //å®šä¹‰ä¸€ä¸ªTrigger
+            Trigger trigger = newTrigger().withIdentity("trigger1", "group1") //å®šä¹‰name/group
+                .startNow()//ä¸€æ—¦åŠ å…¥schedulerï¼Œç«‹å³ç”Ÿæ•ˆ
+                .withSchedule(simpleSchedule() //ä½¿ç”¨SimpleTrigger
+                .withIntervalInSeconds(1) //æ¯éš”ä¸€ç§’æ‰§è¡Œä¸€æ¬¡
+                .repeatForever()) //ä¸€ç›´æ‰§è¡Œï¼Œå¥”è…¾åˆ°è€ä¸åœæ­‡
                 .build();
 
-            //¶¨ÒåÒ»¸öJobDetail
-            JobDetail job = newJob(HelloQuartz.class) //¶¨ÒåJobÀàÎªHelloQuartzÀà£¬ÕâÊÇÕæÕıµÄÖ´ĞĞÂß¼­ËùÔÚ
-                .withIdentity("job1", "group1") //¶¨Òåname/group
-                .usingJobData("name", "quartz") //¶¨ÒåÊôĞÔ
+            //å®šä¹‰ä¸€ä¸ªJobDetail
+            JobDetail job = newJob(HelloQuartz.class) //å®šä¹‰Jobç±»ä¸ºHelloQuartzç±»ï¼Œè¿™æ˜¯çœŸæ­£çš„æ‰§è¡Œé€»è¾‘æ‰€åœ¨
+                .withIdentity("job1", "group1") //å®šä¹‰name/group
+                .usingJobData("name", "quartz") //å®šä¹‰å±æ€§
                 .build();
 
-            //¼ÓÈëÕâ¸öµ÷¶È
+            //åŠ å…¥è¿™ä¸ªè°ƒåº¦
             scheduler.scheduleJob(job, trigger);
 
-            //Æô¶¯Ö®
+            //å¯åŠ¨ä¹‹
             scheduler.start();
 
-            //ÔËĞĞÒ»¶ÎÊ±¼äºó¹Ø±Õ
+            //è¿è¡Œä¸€æ®µæ—¶é—´åå…³é—­
             //Thread.sleep(10000);
             //scheduler.shutdown(true);
         } catch (Exception e) {
