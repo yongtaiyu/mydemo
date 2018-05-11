@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.zenith</groupId>
-	<artifactId>vertxdemo</artifactId>
+	<artifactId>mydemo</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>vertxdemo Maven Webapp</name>
+	<name>mydemo</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
@@ -53,6 +53,6 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>vertxdemo</finalName>
+		<finalName>mydemo</finalName>
 	</build>
 </project>
