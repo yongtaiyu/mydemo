@@ -15,8 +15,8 @@ public class mail163 {
 	private String host = "smtp.163.com";
 	private int port = 25;
 	private String userName = "shengjiebaima@163.com";
-	private String password = "";
-	private String to = "376040925@qq.com";
+	private String password = "y131531j";
+	private String to = "369692194@qq.com";
 
 	public void sendTextMail() throws Exception {
 		SimpleEmail mail = new SimpleEmail();
@@ -173,7 +173,7 @@ public class mail163 {
 	}
 
 	public static void main(String[] args) {
-		eyou ce = new eyou();
+		mail163 ce = new mail163();
 		try {
 			ce.sendTextMail();
 		} catch (Exception e) {
