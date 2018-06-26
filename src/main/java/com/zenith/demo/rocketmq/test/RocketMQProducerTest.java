@@ -19,7 +19,7 @@ public class RocketMQProducerTest {
 
         for (int i = 0; i < 10000; i++) {
             Message message = new Message();
-            message.setKeys("test");
+            message.setKeys("todotask");
             message.setBody(("I send message to RocketMQ " + i).getBytes());
             mqProducer.send(message);
         }
