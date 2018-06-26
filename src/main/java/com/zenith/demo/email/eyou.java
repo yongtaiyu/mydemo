@@ -7,9 +7,6 @@ import org.apache.commons.mail.EmailAttachment;
 import org.apache.commons.mail.HtmlEmail;
 import org.apache.commons.mail.MultiPartEmail;
 import org.apache.commons.mail.SimpleEmail;
-
-import com.zenith.demo.rocketmq.RocketMQConsumer;
-import com.zenith.demo.rocketmq.RocketMQListener;
 /*
  * 说明：亿邮邮件发送Demo
  * 

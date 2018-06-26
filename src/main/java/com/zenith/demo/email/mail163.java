@@ -8,9 +8,6 @@ import org.apache.commons.mail.HtmlEmail;
 import org.apache.commons.mail.MultiPartEmail;
 import org.apache.commons.mail.SimpleEmail;
 
-import com.zenith.demo.rocketmq.RocketMQConsumer;
-import com.zenith.demo.rocketmq.RocketMQListener;
-
 public class mail163 {
 	private String host = "smtp.163.com";
 	private int port = 25;

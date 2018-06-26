@@ -1,4 +1,4 @@
-package com.zenith.demo.rocketmq;
+package com.zenith.demo.rocketmq.demo01;
 
 import com.alibaba.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
 import com.alibaba.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;

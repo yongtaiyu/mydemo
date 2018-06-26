@@ -1,7 +1,7 @@
-package com.zenith.demo.rocketmq.test;
+package com.zenith.demo.rocketmq.demo01.test;
 
-import com.zenith.demo.rocketmq.RocketMQConsumer;
-import com.zenith.demo.rocketmq.RocketMQListener;
+import com.zenith.demo.rocketmq.demo01.RocketMQConsumer;
+import com.zenith.demo.rocketmq.demo01.RocketMQListener;
 
 /**
  * Created by lance on 2017/2/10.

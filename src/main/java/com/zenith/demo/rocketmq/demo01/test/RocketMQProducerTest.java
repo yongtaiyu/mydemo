@@ -1,8 +1,8 @@
-package com.zenith.demo.rocketmq.test;
+package com.zenith.demo.rocketmq.demo01.test;
 
 
 import com.alibaba.rocketmq.common.message.Message;
-import com.zenith.demo.rocketmq.RocketMQProducer;
+import com.zenith.demo.rocketmq.demo01.RocketMQProducer;
 
 /**
  * Created by lance on 2017/2/10.

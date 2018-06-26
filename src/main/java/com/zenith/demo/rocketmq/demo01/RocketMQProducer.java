@@ -1,4 +1,4 @@
-package com.zenith.demo.rocketmq;
+package com.zenith.demo.rocketmq.demo01;
 
 
 import com.alibaba.rocketmq.client.exception.MQClientException;
@@ -24,7 +24,7 @@ public class RocketMQProducer {
 
     public void init() {
         sender = new DefaultMQProducer(groupName);
-        sender.setRetryTimesWhenSendFailed(3);//µ±1SÄÚ·¢´ïÊ§°Ü£¬ÖØ·¢3´Î
+        sender.setRetryTimesWhenSendFailed(3);//ï¿½ï¿½1Sï¿½Ú·ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½Ø·ï¿½3ï¿½ï¿½
         sender.setNamesrvAddr(nameServer);
         sender.setInstanceName(UUID.randomUUID().toString());
         try {
