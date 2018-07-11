@@ -1,4 +1,4 @@
-package com.zenith.demo.rocketmq.demo01;
+package com.zenith.demo.rocketmq.demo01.test;
 
 import com.alibaba.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
 import com.alibaba.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
@@ -11,6 +11,8 @@ import java.util.List;
  * Created by lance on 2017/2/10.
  */
 public class RocketMQListener  implements MessageListenerConcurrently {
+	
+	@Override
     public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs, ConsumeConcurrentlyContext context) {
         for (MessageExt message : msgs) {
             String msg = new String(message.getBody());

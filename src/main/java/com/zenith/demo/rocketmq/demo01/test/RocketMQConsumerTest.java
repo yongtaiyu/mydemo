@@ -1,7 +1,6 @@
 package com.zenith.demo.rocketmq.demo01.test;
 
 import com.zenith.demo.rocketmq.demo01.RocketMQConsumer;
-import com.zenith.demo.rocketmq.demo01.RocketMQListener;
 
 /**
  * Created by lance on 2017/2/10.
@@ -17,11 +16,11 @@ public class RocketMQConsumerTest {
         RocketMQListener mqListener = new RocketMQListener();
         RocketMQConsumer mqConsumer = new RocketMQConsumer(mqListener, mqNameServer, consumerMqGroupName, mqTopics);
         mqConsumer.init();
-
-        try {
-            Thread.sleep(1000 * 60L);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+try {
+	Thread.sleep(1000*60L);
+} catch (InterruptedException e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
     }
 }
